@@ -7,7 +7,7 @@ const navItems = [
 
 export function Navbar() {
   return (
-    <ul>
+    <ul className="flex space-x-4">
       {navItems.map((item) => (
         <li key={item.href}>
           <Link href={item.href}>{item.name}</Link>
