@@ -1,7 +1,7 @@
 import Link from "next/link";
 
 const navItems = [
-  { name: "Tasks", href: "/" },
+  { name: "Home", href: "/" },
   { name: "Add Task", href: "/add-task" },
 ];
 
