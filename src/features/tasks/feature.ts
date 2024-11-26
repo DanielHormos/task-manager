@@ -1,9 +1,4 @@
-import { createRepository } from "./repository";
 import { createService } from "./service";
+import { db } from "@/index";
 
-export function createFeature() {
-  const repository = createRepository();
-  const service = createService(repository);
-
-  return service;
-}
+export const featureService = createService(db);
