@@ -8,7 +8,6 @@ export async function TaskCard() {
       {tasks.map((todo) => (
         <div key={todo.id}>
           <div>{todo.task}</div>
-          <div>{todo.frequency}</div>
         </div>
       ))}
     </div>
