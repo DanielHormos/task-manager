@@ -1,10 +1,14 @@
 import { tasksTable } from "@/db/schema";
-import { db } from "@/index";
+import { TaskInsert } from "@/db/types";
+import { Db } from "@/index";
 
-export function createRepository() {
+export function createRepository(db: Db) {
   return {
     async fetchTasks() {
       return await db.select().from(tasksTable);
+    },
+    async postTask(task: TaskInsert) {
+      return await db.insert(tasksTable).values(task);
     },
   };
 }
