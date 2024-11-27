@@ -1,6 +1,7 @@
 import { tasksTable } from "@/db/schema";
 import { TaskInsert } from "@/db/types";
 import { Db } from "@/index";
+import { eq } from "drizzle-orm";
 
 export function createRepository(db: Db) {
   return {
@@ -9,6 +10,9 @@ export function createRepository(db: Db) {
     },
     async postTask(task: TaskInsert) {
       return await db.insert(tasksTable).values(task);
+    },
+    async deleteTask(id: number) {
+      return await db.delete(tasksTable).where(eq(tasksTable.id, id));
     },
   };
 }
