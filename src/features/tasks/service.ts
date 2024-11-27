@@ -14,5 +14,8 @@ export function createService(db: Db) {
     async deleteTask(id: number) {
       return await repository.deleteTask(id);
     },
+    async completeTask(id: number, completer: string) {
+      return await repository.completeTask(id, completer);
+    },
   };
 }
