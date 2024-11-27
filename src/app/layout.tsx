@@ -29,14 +29,10 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        <div className="flex flex-col min-h-screen">
-          <header className="flex justify-center py-4 ">
-            <Navbar />
-          </header>
-          <div className="flex-grow flex items-center justify-center">
-            {children}
-          </div>
-        </div>
+        <header>
+          <Navbar />
+        </header>
+        {children}
       </body>
     </html>
   );
