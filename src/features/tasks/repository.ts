@@ -14,6 +14,12 @@ export function createRepository(db: Db) {
     async deleteTask(id: number) {
       return await db.delete(tasksTable).where(eq(tasksTable.id, id));
     },
+    async completeTask(id: number, completer: string) {
+      return await db
+        .update(tasksTable)
+        .set({ completed: "true", completer })
+        .where(eq(tasksTable.id, id));
+    },
   };
 }
 
