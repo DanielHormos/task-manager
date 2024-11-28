@@ -11,7 +11,9 @@ export function Navbar() {
     <ul className="menu menu-horizontal bg-base-200 flex justify-center">
       {navItems.map((item) => (
         <li key={item.href}>
-          <Link href={item.href}>{item.name}</Link>
+          <Link href={item.href} className="text-2xl">
+            {item.name}
+          </Link>
         </li>
       ))}
     </ul>
