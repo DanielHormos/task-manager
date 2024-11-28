@@ -17,5 +17,8 @@ export function createService(db: Db) {
     async completeTask(id: number, completer: string) {
       return await repository.completeTask(id, completer);
     },
+    async resetTasks() {
+      return await repository.resetTasks();
+    },
   };
 }
