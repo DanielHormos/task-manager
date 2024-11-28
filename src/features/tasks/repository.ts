@@ -20,6 +20,12 @@ export function createRepository(db: Db) {
         .set({ completed: "true", completer })
         .where(eq(tasksTable.id, id));
     },
+
+    async resetTasks() {
+      return await db
+        .update(tasksTable)
+        .set({ completed: "false", completer: "" });
+    },
   };
 }
 
