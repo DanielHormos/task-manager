@@ -1,34 +1,22 @@
 export default function Page() {
   return (
     <div className="flex items-center  min-h-screen bg-gray-100">
-      <form className="p-6 max-w-md mx-auto bg-white rounded-xl shadow-md space-y-4">
-        <h2 className="text-2xl font-bold text-center">Create Team</h2>
-        <label
-          htmlFor="task"
-          className="block text-lg font-medium text-gray-900"
-        >
-          Team Name
-        </label>
-        <input
-          required
-          maxLength={20}
-          id="task"
-          type="text"
-          name="task"
-          placeholder="Enter team name"
-          className="w-full p-2 mb-4 rounded-md border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500"
-        />
-
-        <button
-          type="submit"
-          className="w-full  mt-4 bg-gray-200 focus:outline-none focus:ring-2 border rounded-md p-2"
-        >
-          Create
-        </button>
-      </form>
-
       <div className="p-6 max-w-md mx-auto bg-white rounded-xl shadow-md space-y-4">
         <h2 className="text-2xl font-bold text-center">Teams</h2>
+        <div className="flex flex-col gap-4">
+          <div className="flex items-center justify-between">
+            <h3 className="text-xl font-semibold p-2">Team 1</h3>
+            <button className="btn">View</button>
+          </div>
+          <div className="flex items-center justify-between">
+            <h3 className="text-xl font-semibold p-2">Team 2</h3>
+            <button className="btn">View</button>
+          </div>
+          <div className="flex items-center justify-between">
+            <h3 className="text-xl font-semibold p-2">Team 3</h3>
+            <button className="btn">View</button>
+          </div>
+        </div>
       </div>
     </div>
   );
