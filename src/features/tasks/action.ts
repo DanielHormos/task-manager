@@ -3,6 +3,10 @@ import { TaskInsert } from "@/db/types";
 import { featureService } from "./instance";
 import { revalidatePath } from "next/cache";
 
+export async function fetchTasksAction() {
+  return await featureService.fetchTasks();
+}
+
 export async function postTaskAction(data: FormData) {
   const task = data.get("task") as string;
   const frequency = data.get("frequency") as string;
@@ -21,13 +25,9 @@ export async function completeTaskAction(data: FormData, id: number) {
   revalidatePath("/");
 }
 
-export async function fetchTasksAction() {
-  return await featureService.fetchTasks();
-}
-
 export async function resetAllTasksAction() {
+  await featureService.resetTasks();
   revalidatePath("/");
-  return await featureService.resetTasks();
 }
 
 export async function deleteTaskAction(id: number) {
