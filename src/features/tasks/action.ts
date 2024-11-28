@@ -16,17 +16,21 @@ export async function postTaskAction(data: FormData) {
 }
 
 export async function completeTaskAction(data: FormData, id: number) {
-  revalidatePath("/");
-
   const completer = data.get("completer") as string;
   await featureService.completeTask(id, completer);
+  revalidatePath("/");
 }
 
 export async function fetchTasksAction() {
   return await featureService.fetchTasks();
 }
 
-export async function deleteTaskAction(id: number) {
+export async function resetAllTasksAction() {
   revalidatePath("/");
+  return await featureService.resetTasks();
+}
+
+export async function deleteTaskAction(id: number) {
   await featureService.deleteTask(id);
+  revalidatePath("/");
 }
