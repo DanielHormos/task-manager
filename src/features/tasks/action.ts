@@ -30,6 +30,21 @@ export async function resetAllTasksAction() {
   revalidatePath("/");
 }
 
+export async function resetDailyTasksAction() {
+  await featureService.resetDailyTasks();
+  revalidatePath("/");
+}
+
+export async function resetWeeklyTasksAction() {
+  await featureService.resetWeeklyTasks();
+  revalidatePath("/");
+}
+
+export async function resetMonthlyTasksAction() {
+  await featureService.resetMonthlyTasks();
+  revalidatePath("/");
+}
+
 export async function deleteTaskAction(id: number) {
   await featureService.deleteTask(id);
   revalidatePath("/");
