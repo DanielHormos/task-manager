@@ -26,6 +26,24 @@ export function createRepository(db: Db) {
         .update(tasksTable)
         .set({ completed: "false", completer: "" });
     },
+    async resetDailyTasks() {
+      return await db
+        .update(tasksTable)
+        .set({ completed: "false", completer: "" })
+        .where(eq(tasksTable.frequency, "daily"));
+    },
+    async resetWeeklyTasks() {
+      return await db
+        .update(tasksTable)
+        .set({ completed: "false", completer: "" })
+        .where(eq(tasksTable.frequency, "weekly"));
+    },
+    async resetMonthlyTasks() {
+      return await db
+        .update(tasksTable)
+        .set({ completed: "false", completer: "" })
+        .where(eq(tasksTable.frequency, "monthly"));
+    },
   };
 }
 
