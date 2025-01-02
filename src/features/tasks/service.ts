@@ -20,5 +20,14 @@ export function createService(db: Db) {
     async resetTasks() {
       return await repository.resetTasks();
     },
+    async resetDailyTasks() {
+      return await repository.resetDailyTasks();
+    },
+    async resetWeeklyTasks() {
+      return await repository.resetWeeklyTasks();
+    },
+    async resetMonthlyTasks() {
+      return await repository.resetMonthlyTasks();
+    },
   };
 }
