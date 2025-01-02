@@ -5,7 +5,7 @@ import { Navbar } from "@/ui/navbar";
 import { roboto } from "@/app/ui/fonts";
 
 export const metadata: Metadata = {
-  title: "Task manager",
+  title: "TaskFlow",
   description: "Next js application - Hackweek project",
 };
 
