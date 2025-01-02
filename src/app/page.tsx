@@ -1,6 +1,9 @@
 import { fetchTasksAction } from "@/features/tasks/action";
 import { TaskCard } from "@/features/tasks/task-card";
 import ResetTasksButton from "@/features/tasks/ResetTasksButton";
+import ResetDailyTasksButton from "@/features/tasks/ResetDailyTasksButton";
+import ResetWeeklyTasksButton from "@/features/tasks/ResetWeeklyTasksButton";
+import ResetMonthlyTasksButton from "@/features/tasks/ResetMonthlyTasksButton";
 
 export default async function Home() {
   const tasks = await fetchTasksAction();
@@ -17,14 +20,23 @@ export default async function Home() {
         <div className="flex gap-10 justify-center pb-16">
           <section>
             <h2 className="text-2xl font-bold text-center mb-4">Daily</h2>
+            <div className="flex justify-center mb-4">
+              <ResetDailyTasksButton />
+            </div>
             <TaskCard tasks={dailyTasks} />
           </section>
           <section>
             <h2 className="text-2xl font-bold text-center mb-4">Weekly</h2>
+            <div className="flex justify-center mb-4">
+              <ResetWeeklyTasksButton />
+            </div>
             <TaskCard tasks={weeklyTasks} />
           </section>
           <section>
             <h2 className="text-2xl font-bold text-center mb-4">Monthly</h2>
+            <div className="flex justify-center mb-4">
+              <ResetMonthlyTasksButton />
+            </div>
             <TaskCard tasks={monthlyTasks} />
           </section>
         </div>
